@@ -13,60 +13,68 @@
   --blue-dark: #574AE8;
   --white: #FFF;
 
-  --data: #717171;
+  --cinza: #717171;
   --title: #313131;
   --text: #B6B6B6;
 
+  --title-post: #1A202C;
+
   --linear: linear-gradient(90deg, #574AE8 0%, #3EA1DB 100%);
+}
+
+html, body{
+  background-color: var(--background);
 }
 
 
 body header {
   background: linear-gradient(90deg, #574AE8 , #3EA1DB);
   color:var(--white);
-  border: 2px solid red;
+  padding-bottom: 4.1rem; 
 }
 
 .header{
-  max-width: 900px;
-  padding-top: 4.1rem;
+  max-width: 90rem;
   margin: auto;
-
-  border: 2px solid blue;
 }
 
-.title{
-  width: 100%;
+.header-title{
+  max-width: 90rem;
+  padding-top: 4.1rem;
 
   display: flex;
   justify-content: space-between;
+  margin-bottom: 7.3rem;
+}
 
+.header-title h1{
   color: var(--white);
   font-family: 'Lexend Deca';
   font-size: 2.4rem;
-  
-  border: 2px solid red;
+  font-style: normal;
+  font-weight: 400;
 }
 
-
-#header-pesquisa {
+#header-search {
   background: rgba(255, 255, 255, 0.2);
-  max-width: 900px;
+  max-width: 90rem;
   height: 6.5rem;
-  margin: 7.3rem auto 4.1rem;
-  align-items: center;
-  display: flex;
-  border: none;
-  border-radius: 5px; 
-
-  border: 4px solid green;
+  margin-bottom: 4.1rem;
   
+  display: flex;
+  align-items: center;
+  
+  border: none;
+  border-radius: 0.5rem;
 }
 
-#header-pesquisa img {
+#header-search img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 2.3rem;
   height: 2.3rem;
-  margin-left: 20px;
+  margin: 0 2rem;
 }
 
 form {
@@ -74,29 +82,32 @@ form {
 }
 
 form input {
-  width: 98%;
-  padding: 15px 0 15px 0;
+  width: 100%;
+  padding-right: 6.4rem;
+
   outline: none;
   background: none;
   border: none;
-  font: normal 18px 'Lexend Deca';
-  color: #FFFFFF;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.8rem;  
 }
 
-
+form input::placeholder{
+  color: var(--white);
+}
 
 #post-group {
   max-width: 90rem;
-  margin: 0 auto;
+  margin: 5rem auto;
   
   background: var(--white);
   box-shadow: 0px 0px 10px rgba(19, 19, 31, 0.05);
   border-radius: 5px;
   font-family: "Lexend Deca", sans-serif;
   margin-bottom: 50px;
-
-  border: 4px solid green;
-
 }
 
 #post-group .data-like{
@@ -104,52 +115,39 @@ form input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 10rem;
+}
 
-  
-
-  border: 4px solid red;
+#post-group .data-like .fav{
+  padding-right: 2.2rem;
 }
 
 #post-group .data-like p{
-  color: var(--data);
+  padding: 2rem 2.2rem;
+  color: var(--cinza);
   font-family: 'Lexend Deca';
   font-style: normal;
   font-weight: 400;
   font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-#post-group .post{
-  padding: 2.5rem;
 }
 
 #post-group .post h2 {
+  padding: 0rem 2.2rem;
+  color: var(--title-post);
   font-family: 'Lexend Deca';
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
   line-height: 32px;
-
+  margin-bottom: 0.8rem;
 } 
 
 #post-group .post p{
+  padding: 2.2rem 2.2rem;
+  color: var(--cinza);
   font-family: 'Lexend Deca';
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
 }
-
-
-
-
-/* h2{
-  color: var(--white);
-  font-family: 'Lexend Deca';
-  font-size: 2.4rem;
-  border: 2px solid red;
-  justify-content: space-between;
-} */
-
-
-
