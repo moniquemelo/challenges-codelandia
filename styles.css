@@ -1,0 +1,155 @@
+* {
+  box-sizing: boder-box;
+  padding: 0;
+  margin: 0;
+
+  font-size: 62.5%;
+}
+
+:root {
+  --background: #F3F5F7;
+
+  --blue: #3EA1DB;
+  --blue-dark: #574AE8;
+  --white: #FFF;
+
+  --data: #717171;
+  --title: #313131;
+  --text: #B6B6B6;
+
+  --linear: linear-gradient(90deg, #574AE8 0%, #3EA1DB 100%);
+}
+
+
+body header {
+  background: linear-gradient(90deg, #574AE8 , #3EA1DB);
+  color:var(--white);
+  border: 2px solid red;
+}
+
+.header{
+  max-width: 900px;
+  padding-top: 4.1rem;
+  margin: auto;
+
+  border: 2px solid blue;
+}
+
+.title{
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--white);
+  font-family: 'Lexend Deca';
+  font-size: 2.4rem;
+  
+  border: 2px solid red;
+}
+
+
+#header-pesquisa {
+  background: rgba(255, 255, 255, 0.2);
+  max-width: 900px;
+  height: 6.5rem;
+  margin: 7.3rem auto 4.1rem;
+  align-items: center;
+  display: flex;
+  border: none;
+  border-radius: 5px; 
+
+  border: 4px solid green;
+  
+}
+
+#header-pesquisa img {
+  width: 2.3rem;
+  height: 2.3rem;
+  margin-left: 20px;
+}
+
+form {
+  width: 100%;
+}
+
+form input {
+  width: 98%;
+  padding: 15px 0 15px 0;
+  outline: none;
+  background: none;
+  border: none;
+  font: normal 18px 'Lexend Deca';
+  color: #FFFFFF;
+}
+
+
+
+#post-group {
+  max-width: 90rem;
+  margin: 0 auto;
+  
+  background: var(--white);
+  box-shadow: 0px 0px 10px rgba(19, 19, 31, 0.05);
+  border-radius: 5px;
+  font-family: "Lexend Deca", sans-serif;
+  margin-bottom: 50px;
+
+  border: 4px solid green;
+
+}
+
+#post-group .data-like{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  
+
+  border: 4px solid red;
+}
+
+#post-group .data-like p{
+  color: var(--data);
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+#post-group .post{
+  padding: 2.5rem;
+}
+
+#post-group .post h2 {
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+
+} 
+
+#post-group .post p{
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+
+
+
+/* h2{
+  color: var(--white);
+  font-family: 'Lexend Deca';
+  font-size: 2.4rem;
+  border: 2px solid red;
+  justify-content: space-between;
+} */
+
+
+
