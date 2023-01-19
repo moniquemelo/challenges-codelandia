@@ -68,20 +68,22 @@ body header {
   border-radius: 0.5rem;
 }
 
-#header-search img {
+
+
+form {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.lupa {
   width: 2.3rem;
   height: 2.3rem;
   margin: 0 2rem;
 }
 
-form {
-  width: 100%;
-}
-
-form input {
+form .input {
   width: 100%;
   padding-right: 6.4rem;
 
@@ -97,6 +99,7 @@ form input {
 
 form input::placeholder{
   color: var(--white);
+  
 }
 
 #post-group {
