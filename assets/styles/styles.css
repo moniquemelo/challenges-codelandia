@@ -153,3 +153,35 @@ form input::placeholder{
   font-size: 1.8rem;
   line-height: 3.2rem;
 }
+
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.0rem;
+}
+
+
+
+.page-link{
+  color: black!important;
+  font-size: 2.0rem;
+
+  /*font-size: 1.1rem;*/
+  background-color: transparent;
+  border: none;
+  
+  cursor: pointer;
+ 
+  border-radius: .2rem;
+}
+
+/* pagination styling */
+
+/* .pagination a {
+  color: black;
+  padding: 10px 18px;
+  text-decoration: none;
+}  */

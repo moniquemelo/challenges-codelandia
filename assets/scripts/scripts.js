@@ -1,9 +1,10 @@
 const groupArticle = document.querySelector('article') // Todo o conteúdo dos posts
+const groupPagination = document.querySelector('nav')
 const searchForm = document.querySelector('.search') // Class do form (campo de pesquisa do usuario)
 const inputUser = document.querySelector('.input') // Pega o valor pesquisado pelo usuário.
 
-// atributo -> input[src=assets/img/favorite.png]
-// .title (nome da classe) > img
+const newsPerPage = 2 // Tamanho de noticias por pagina
+let pageStart = 1
 
 searchForm.addEventListener('submit', action)
 
@@ -11,12 +12,11 @@ function action(event) {
   event.preventDefault()
 
   const baseUrl = 'https://newsapi.org/v2/everything?'
-  const page = 'page=1'
-  const pageSize = 'pageSize=8' // Tamanho por página
   const apiKey = '846b63d2889449c1b4e4f14a2892a107'
-  let topicSearch = inputUser.value
+  const topicSearch = inputUser.value
+  const url = `${baseUrl}q=${topicSearch}&page=${pageStart}&pageSize=${newsPerPage}&apiKey=${apiKey}`
 
-  let url = `${baseUrl}q=${topicSearch}&${page}&${pageSize}&apiKey=${apiKey}`
+  groupArticle.innerHTML = ''
 
   fetch(url)
     .then(res => {
@@ -24,6 +24,10 @@ function action(event) {
     })
     .then(data => {
       console.log(data)
+
+      // let totalNews = data.totalResults // 1050 noticias
+      // let totalPages = Math.ceil(totalNews / newsPerPage) // 30 paginas
+
       data.articles.forEach(article => {
         // Grupo dos posts
         const divPostGroup = document.createElement('div')
@@ -59,7 +63,61 @@ function action(event) {
         divPost.append(titlePost, pContent) // Adiciona o titulo e o conteudo do artigo dentro do grupo Post
         divDataLike.append(pData, imgFav) // Adiciona a data (tag p) e o fav dentro do grupo data-like
         divPostGroup.append(divDataLike, divPost) // Adiciona o data-like dentro do grupo de posts.
-        groupArticle.appendChild(divPostGroup) // Adiciona o divPostGroup completo no ARTICLE.
+        groupArticle.append(divPostGroup) // Adiciona o divPostGroup completo no ARTICLE.
       })
     })
 }
+
+// API Pagination
+const previous = document.querySelector('.previous')
+const next = document.querySelector('.next')
+const pages = document.querySelectorAll('.page')
+
+previous.addEventListener('click', previousAction)
+next.addEventListener('click', nextAction)
+
+//Cenário 1: Clicar em qualquer numero de page (pageStart = pageClicked)
+pages.forEach(page => {
+  page.addEventListener('click', event => {
+    event.preventDefault()
+
+    pageClicked = page.textContent
+
+    pageStart = pageClicked
+    action(event)
+  })
+})
+
+// Cenario 2: Clicar no previous (pageStart--)
+function previousAction(event) {
+  event.preventDefault()
+
+  if (pageStart > 1) {
+    pageStart--
+    action(event)
+  }
+}
+
+// Cenario 3: Clicar no next (pageStart++)
+function nextAction(event) {
+  event.preventDefault()
+
+  pageStart++
+  action(event)
+}
+
+// pages.forEach(page => {
+//   page.addEventListener('click', pageAction)
+// })
+
+// Cenario 3: Clicar em qualquer um dos numeros (pega o value e coloca no pageStart)
+// function pageAction(event) {
+//   event.preventDefault()
+
+//   pageSelected = page.textContent
+//   groupArticle.innerHTML = ''
+
+//   console.log(pageSelected)
+//   pageStart = pageSelected
+//   action(event)
+// }
