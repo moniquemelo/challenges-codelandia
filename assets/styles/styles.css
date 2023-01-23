@@ -30,7 +30,7 @@ html, body{
 body header {
   background: linear-gradient(90deg, #574AE8 , #3EA1DB);
   color:var(--white);
-  padding-bottom: 4.1rem; 
+  padding-bottom: 1rem; 
 }
 
 .header{
@@ -40,11 +40,11 @@ body header {
 
 .header-title{
   max-width: 90rem;
-  padding-top: 4.1rem;
+  padding-top: 2rem;
 
   display: flex;
   justify-content: space-between;
-  margin-bottom: 7.3rem;
+  margin-bottom: 5rem;
 }
 
 .header-title h1{
@@ -58,7 +58,7 @@ body header {
 #header-search {
   background: rgba(255, 255, 255, 0.2);
   max-width: 90rem;
-  height: 6.5rem;
+  height: 6rem;
   margin-bottom: 4.1rem;
   
   display: flex;
@@ -67,8 +67,6 @@ body header {
   border: none;
   border-radius: 0.5rem;
 }
-
-
 
 form {
   width: 100%;
@@ -151,37 +149,26 @@ form input::placeholder{
   font-style: normal;
   font-weight: 400;
   font-size: 1.8rem;
-  line-height: 3.2rem;
 }
-
 
 
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4.0rem;
+  margin: 0;
+  padding: 0;
 }
 
-
-
 .page-link{
-  color: black!important;
+  color: var(--blue-dark);
+  font-family: 'Inter';
+  padding: 1.2rem;
   font-size: 2.0rem;
-
-  /*font-size: 1.1rem;*/
-  background-color: transparent;
-  border: none;
-  
   cursor: pointer;
- 
   border-radius: .2rem;
 }
 
-/* pagination styling */
-
-/* .pagination a {
-  color: black;
-  padding: 10px 18px;
-  text-decoration: none;
-}  */
+.page-link:hover{
+  background-color: var(--blue);
+}
